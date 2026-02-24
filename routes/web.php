@@ -28,9 +28,7 @@ Route::get('/world', function () {
 
 Route::get('/about', AboutController::class);
 
-Route::get('/user/{name?}', function ($name = null) {
-    return 'Nama Saya ' . $name;
-});
+Route::get('/greeting', [WelcomeController::class, 'greeting']);
 
 Route::get('/posts/{postId}/comments/{commentId}', function ($postId, $commentId) {
     return 'Pos ke-' . $postId . ' Komentar ke-' . $commentId;
